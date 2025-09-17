@@ -86,7 +86,7 @@ const Header = () => {
                       {catalogItems.map((item, index) => (
                         <a 
                           key={index}
-                          href="#" 
+                          href={`/catalog?category=${item.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`} 
                           className="block p-3 rounded-md hover:bg-accent transition-colors text-sm font-medium text-foreground hover:text-primary"
                         >
                           {item}
@@ -98,6 +98,8 @@ const Header = () => {
               </NavigationMenuList>
             </NavigationMenu>
             
+            <a href="/" className="text-foreground hover:text-primary transition-colors font-medium">Главная</a>
+            <a href="/catalog" className="text-foreground hover:text-primary transition-colors font-medium">Каталог</a>
             <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">О компании</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors">Сервис и гарантия</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors">Доставка и оплата</a>
